@@ -27,6 +27,33 @@ print out a calendar for April in 2015, but if you omit either the year or both 
 it should use today’s date to get the month and year.
 """
 
-import sys
 import calendar
 from datetime import datetime
+from datetime import date
+import getpass
+import sys
+
+args = sys.argv
+user = getpass.getuser()
+
+today = date.today()
+m = today.month
+y = today.year
+err = print("Please enter a month")
+
+
+def get_calendar(month=m, year=y):
+    today_is = m, y
+    return today_is
+
+print("\n")
+
+print(f"***Hello, {user}! Please enter the year and month below in YYYY-MM format***")
+print("\n")
+
+user_y = int((input("What is the year? (YYYY) ")) or y)
+user_m = int((input("What is the month? (MM) ")) or m)
+
+
+cal = calendar.TextCalendar(calendar.SUNDAY)
+print(cal.formatmonth(user_y, user_m,))

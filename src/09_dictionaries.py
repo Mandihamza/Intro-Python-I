@@ -32,9 +32,18 @@ waypoints = [
         "name": "a third place"
     }
 ]
+print(type(waypoints))  # list
+print(type(waypoints[0]))  # dictionary
+print("Original waypoints:", waypoints)
 
 # Add a new waypoint to the list
 # YOUR CODE HERE
+
+new_waypoint = {"lat": 34.6413, "long": 139.6503, "name": "Tokyo, Japan"}
+print("New waypoint:", new_waypoint)
+
+waypoints.append(new_waypoint)
+print("New waypoint added to dictionary:", waypoints)
 
 # Modify the dictionary with name "a place" such that its longitude
 # value is -130 and change its name to "not a real place"
@@ -43,5 +52,27 @@ waypoints = [
 
 # YOUR CODE HERE
 
+waypoints[0]['name'] = "not a real place"
+print(f"Waypoint name updated to: \"{waypoints[0]['name']}\"!", waypoints)
+
+waypoints[0]['lon'] = -130
+print(f"Waypoint \"{waypoints[0]['name']}\" longitude updated to: \"{waypoints[0]['lon']}\"!", waypoints)
+
 # Write a loop that prints out all the field values for all the waypoints
 # YOUR CODE HERE
+
+waypoints_values = waypoints[0].values()
+
+print("first waypoint values:", waypoints[0].values())
+print("waypoint_values type:", type(waypoints_values))
+print("waypoints type:", type(waypoints))
+
+
+def fun1():
+    return ()
+
+
+func1(*waypoints)
+print(func1)
+
+# "The waypoint field values are:".
